@@ -583,10 +583,14 @@
                 event.preventDefault();
               }
 
+              /*
+               * remove this condition check for now, because it prevents user
+               * open the context menu in project panel in touch device.
+               */
               // Don't show context menu if on touch device and element is draggable
-              if(isTouchDevice() && element.attr('draggable') === 'true') {
-                return false;
-              }
+              // if(isTouchDevice() && element.attr('draggable') === 'true') {
+              //   return false;
+              // }
 
               // Remove if the user clicks outside
               $document.find('body').on('mousedown touchstart', removeOnOutsideClickEvent);
